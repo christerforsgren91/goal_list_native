@@ -9,6 +9,9 @@ const App = () => {
   const [addMode, setAddMode] = useState(false)
 
   const addGoalHandler = (goalTitle) => {
+    if (goalTitle.length === 0) {
+      return
+    }
     setCourseGoals((currentGoals) => [
       ...currentGoals,
       { id: Math.random().toString(), value: goalTitle },
